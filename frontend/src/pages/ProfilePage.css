@@ -1,0 +1,66 @@
+.profile-page {
+  max-width: 960px;
+  color: var(--text);
+}
+
+.profile-page .profile-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.profile-page .profile-pic-preview {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(72, 60, 50, 0.1);
+}
+
+.profile-page h2,
+.profile-page h3 {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.profile-page label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.profile-page .form-control,
+.profile-page .form-control-file {
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.profile-page .form-control::placeholder {
+  color: var(--muted);
+}
+
+.profile-page .btn {
+  min-width: 160px;
+  background: var(--brand);
+  color: #ffffff;
+  border: 1px solid var(--brand);
+}
+
+.profile-page .btn:hover {
+  background: var(--brand-light);
+}
+
+.profile-page .profile-summary p {
+  margin-bottom: 0.75rem;
+}
+
+.profile-page .profile-summary p strong {
+  display: inline-block;
+  width: 90px;
+}

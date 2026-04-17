@@ -1,0 +1,191 @@
+:root {
+  --brand: #483C32;
+  --brand-light: #5d6e64;
+  --text: #000000;
+  --bg: #ffffff;
+  --surface: #f7f7f7;
+  --surface-strong: #e8e8e8;
+  --border: #d1d1d1;
+  --field-background: #ffffff;
+  --field-border: #d1d1d1;
+  --field-focus: #000000;
+  --muted: rgba(0, 0, 0, 0.55);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body ::selection {
+  background: rgba(72, 60, 50, 0.15);
+  color: #ffffff;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--brand);
+  text-decoration: underline;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  min-height: 44px;
+}
+
+button,
+.btn {
+  background: var(--brand);
+  color: #ffffff;
+  border: 1px solid var(--brand);
+  border-radius: 0.5rem;
+}
+
+button:hover,
+.btn:hover {
+  background: var(--brand-light);
+}
+
+.navbar,
+nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+nav button {
+  background: var(--brand);
+  color: #ffffff;
+  border-color: var(--brand);
+}
+
+.container,
+.home-page,
+.profile-page,
+.admin-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 22px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text);
+  margin-top: 0;
+}
+
+input,
+textarea,
+select,
+.form-control {
+  width: 100%;
+  background: var(--field-background);
+  border: 1px solid var(--field-border);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 0.65rem;
+  box-shadow: none;
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.form-control:focus {
+  outline: none !important;
+  border-color: var(--field-border) !important;
+  box-shadow: none !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.post-card,
+.profile-card,
+.alert,
+form,
+.admin-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.post-card {
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.post-card h3,
+.profile-summary p,
+.admin-page h2,
+.admin-page th,
+.admin-page td {
+  color: var(--text);
+}
+
+button,
+.btn {
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.alert {
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  background: var(--surface-strong);
+  color: var(--text);
+}
+
+button[disabled],
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+footer {
+  color: var(--muted);
+  text-align: center;
+  margin-top: 2rem;
+}
