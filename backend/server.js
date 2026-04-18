@@ -19,11 +19,10 @@ connectDB();
 
 // ── Middleware ─────────────────────────────
 app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'https://thefolio-project-alpha.vercel.app'
-  ],
-  credentials: true
+origin: [
+'http://localhost:3000',
+'https://thefolio-project-alpha.vercel.app'],
+credentials: true,
 }));
 app.use(express.json());
 

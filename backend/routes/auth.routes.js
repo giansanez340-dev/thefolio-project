@@ -16,15 +16,16 @@ const generateToken = (id) =>
 // ── POST /api/auth/register ───────────────────────────────────
 router.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
+  const normalizedEmail = email.trim().toLowerCase();
 
   try {
-    const exists = await User.findOne({ email });
+    const exists = await User.findOne({ email: normalizedEmail });
 
     if (exists) {
       return res.status(400).json({ message: 'Email is already registered' });
     }
 
-    const user = await User.create({ name, email, password });
+    const user = await User.create({ name, email: normalizedEmail, password });
 
     res.status(201).json({
       token: generateToken(user._id),
@@ -45,9 +46,10 @@ router.post('/register', async (req, res) => {
 // ── POST /api/auth/login ──────────────────────────────────────
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
+  const normalizedEmail = email.trim().toLowerCase();
 
   try {
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email: normalizedEmail });
 
     if (!user) {
       return res.status(400).json({ message: 'Invalid email or password' });
