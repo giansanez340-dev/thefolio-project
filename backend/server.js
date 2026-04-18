@@ -1,24 +1,18 @@
-require('dotenv').config({debug: false}); // Load .env variables FIRST
+require('dotenv').config({ debug: false });
 
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const connectDB = require('./config/db.js');
-
 // Import routes
 const authRoutes = require('./routes/auth.routes');
 const postRoutes = require('./routes/post.routes');
 const commentRoutes = require('./routes/comment.routes');
 const adminRoutes = require('./routes/admin.routes');
-
 const app = express();
 
-// Connect to MongoDB
-connectDB();
-
-
 // ── Middleware ─────────────────────────────────
-
+connectDB();
 // Allow React (port 3000) to call this server
 app.use(cors({
   origin: 'http://localhost:3000',
